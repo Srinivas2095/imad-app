@@ -24,6 +24,7 @@ function createTemplate(data)
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link href="ui/index.html" rel="stylesheet"/>
+    <script src="ui/main.js"></script>
     </head>
     <body>
     <div class="container">
