@@ -40,7 +40,7 @@ function createTemplate(data)
     ${heading}
     </h2>
     </body>
-    </html>`
+    </html>`;
     return htmltemplate;
     
 }
