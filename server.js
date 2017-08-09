@@ -2,6 +2,45 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var content=
+{
+    title:'Demo App',
+    heading:'Demo App',
+    date:'Aug 9,2017',
+    content:`
+    <p>Hi..This is a demo app</p>`
+    
+};
+
+function createTemplate(data)
+{
+    var title=data.title;
+    var date=data.date;
+    var htmltemplate=`
+    <html>
+    <head>
+    <title>
+    ${title}
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="ui/index.html" rel="stylesheet"/>
+    </head>
+    <body>
+    <div class="container">
+    <div>
+    <a href="/">Home</a>
+    </div>
+    <hr/>
+    
+    <div>
+    ${date}
+    </div>
+    </body>
+    </html>`
+    return htmltemplate;
+    
+}
+
 var app = express();
 app.use(morgan('combined'));
 
@@ -10,7 +49,10 @@ app.get('/', function (req, res) {
 });
 
 
-
+app.get('/demoapp',function(req,res)
+{
+    res.send(createTemplate(content));
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
