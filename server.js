@@ -5,7 +5,7 @@ var path = require('path');
 var content=
 {
     title:'Demo App',
-    heading:'Demo App',
+    heading:'MSD',
     date:'Aug 9,2017',
     content:`
     <p>Hi..This is a demo app</p>`
@@ -35,6 +35,9 @@ function createTemplate(data)
     <div>
     ${date}
     </div>
+    <h2>
+    ${heading}
+    </h2>
     </body>
     </html>`
     return htmltemplate;
