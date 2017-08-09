@@ -23,7 +23,7 @@ function createTemplate(data)
     ${title}
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link href="ui/index.html" rel="stylesheet"/>
+    <link href="/ui/index.html" rel="stylesheet"/>
    <script type="text/javascript" src="/ui/main.js"></script>
     </head>
     <body>
