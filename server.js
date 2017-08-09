@@ -1,7 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var content=
 {
     title:'Demo App',
@@ -52,6 +51,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var counter=0;
+app.get('/counter',function(req,res)
+{
+    counter=counter+1;
+    res.send(counter.toString());
+});
 
 app.get('/demoapp',function(req,res)
 {
