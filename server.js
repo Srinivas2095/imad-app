@@ -88,9 +88,9 @@ app.get('/Sample2',function(req,res)
 var names=[];
 app.get('/submitname/:name',function()
 {
-    var name=req.params.name;
+    var name=req.query.name;
     names.push(name);
-    res.send(names);
+    res.send(JSON.stringify(names));
 });
 
 
