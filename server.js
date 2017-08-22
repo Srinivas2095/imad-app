@@ -78,7 +78,7 @@ app.get('/test-db',function(req,res)
     });
 });
 
-app.get('/new/name',function(req,res){
+app.get('/new/:name',function(req,res){
     pool.query("SELECT * FROM new WHERE name='"+req.params.name+"'",function(err,result)
     {
         if(err)
