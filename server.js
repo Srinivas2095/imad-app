@@ -78,7 +78,7 @@ app.get('/test-db',function(req,res)
     });
 });
 
-app.get('/new/:New Title',function(req,res){
+app.get('/new/:title',function(req,res){
     pool.query("SELECT * FROM new WHERE title='"+req.params.title+"'",function(err,result)
     {
         if(err)
