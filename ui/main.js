@@ -27,15 +27,23 @@ success:function(data){
   console.log('success');
 }
 });
-
+('#submit_btn').click(function()
+{
+   var username= $('#username').val();
+   var password=$('#password').val();
+});
 $.ajax({
     url:'/login',
     contentType:"application/json",
-    data:'{"username":"Srinivas",password:"password"}',
+    data:JSON.stringify({username:username,password:password}),
     type:'POST',
     success:function(data)
     {
-        console.log('success');
+        alert("SUCCESS");
+    },
+    fail:function(data)
+    {
+        alert(data);
     }
 });
 
