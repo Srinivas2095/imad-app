@@ -90,7 +90,7 @@ app.get('/new/:title',function(req,res){
         {
             if(result.rows.length===0)
             {
-                res.status(404).send('Not found');
+                res.status(404).send('Not found'); 
             }
             else
             {
