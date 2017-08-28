@@ -18,7 +18,7 @@ button.onclick=function()
   request.send(null);
 };
 
-$.ajax({
+/*$.ajax({
 url:'/create-user',
 contentType: "application/json",
 data:'{"username":"Srinivas","password":"password"}',
@@ -26,13 +26,12 @@ type:'POST',
 success:function(data){
   console.log('success');
 }
-});
+});*/
 $('#submit_btn').click(function()
 {
    var username= $('#username').val();
    var password=$('#password').val();
-});
-$.ajax({
+   $.ajax({
     url:'/login',
     contentType:"application/json",
     data:JSON.stringify({username:username,password:password}),
@@ -46,6 +45,8 @@ $.ajax({
         alert(data);
     }
 });
+});
+
 
 
 var name1=inputName.value;
