@@ -149,7 +149,7 @@ var username=req.body.username;
        }
        else
        {
-           if(result.row.length===0)
+           if(result.rows.length===0)
            {
                res.status(403).send('username/password invalid');
            }
