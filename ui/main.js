@@ -49,7 +49,7 @@ $('#submit_btn').click(function()
 
 
 
-var name1=inputName.value;
+
 var submit=document.getElementById('btn_submit');
 submit.onclick=function()
 {
