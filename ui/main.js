@@ -27,7 +27,7 @@ success:function(data){
   console.log('success');
 }
 });
-('#submit_btn').click(function()
+$('#submit_btn').click(function()
 {
    var username= $('#username').val();
    var password=$('#password').val();
