@@ -141,6 +141,7 @@ app.post('/login',function(req,res)
 {
 var username=req.body.username;
    var password=req.body.password;
+   console.log(password);
    pool.query('SELECT * FROM "hashingdemo" WHERE username=$1',[username],function(err,result){
        if(err)
        {
@@ -150,20 +151,20 @@ var username=req.body.username;
        {
            if(result.row.length===0)
            {
-               res.send(403).send('username/password invalid');
+               res.status(403).send('username/password invalid');
            }
            else
            {
                var dbString=result.rows[0].password;
                var salt=dbString.split('$')[2];
                var hashedPassword=hash(password,salt);
-               if(hashedPassword==dbString)
+               if(hashedPassword===dbString)
                {
                    res.send('credentials correct');
                }
                else
                {
-                   res.send(403).send('uname/pwd invalid');
+                   res.status(403).send('uname/pwd invalid');
                }
            }
        }
