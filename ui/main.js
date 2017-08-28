@@ -28,6 +28,25 @@ success:function(data){
 }
 });
 
+$.ajax({
+    url:'/login',
+    contentType:"application/json",
+    data:'{"username":"Srinivas",password:"password"}',
+    type:'POST',
+    success:function(data)
+    {
+        console.log('success');
+    }
+});
+
+var username=document.getElementById('username').value;
+var password=document.getElementById('password').value;
+console.log(username);
+console.log(password);
+request.open('POST','http://srinivasavaradhansriram.imad.hasura-app.io/login',true);
+request.setRequestHeader('Content-Type','application/json');
+request.open(JSON.stringify({username:username,password:password}));
+
 var inputName=document.getElementById('name');
 var name1=inputName.value;
 var submit=document.getElementById('btn_submit');
