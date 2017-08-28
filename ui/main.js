@@ -18,6 +18,15 @@ button.onclick=function()
   request.send(null);
 };
 
+$.ajax({
+url:'/create-user',
+contentType: "application/json",
+data:'{"username":"Srinivas","password":"password"}',
+type:'POST',
+success:function(data){
+  console.log('success');
+}
+});
 
 var inputName=document.getElementById('name');
 var name1=inputName.value;
