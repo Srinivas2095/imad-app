@@ -89,6 +89,25 @@ app.get('/test-db',function(req,res)
     });
 });
 
+app.get('/check-login',function(req,res)
+{
+   if(req.session&&req.session.auth&&req.session.auth.userId)
+   {
+       res.send("you are logged in"+req.session.auth.userId.toString());
+   }
+   else
+   {
+       res.send("you are logged in");
+   }
+});
+
+app.get('/logout',function(req,res)
+{
+   delete req.session.auth;
+   res.send("logged out succesfully");
+});
+
+
 app.get('/new/:title',function(req,res){
     pool.query("SELECT * FROM new WHERE title='"+req.params.title+"'",function(err,result)
     {
