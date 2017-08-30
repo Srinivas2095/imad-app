@@ -179,7 +179,7 @@ var username=req.body.username;
                var hashedPassword=hash(password,salt);
                if(hashedPassword===dbString)
                {
-                   req.session.auth={userId:result.rows[0].username};
+                   req.session.auth={userId:result.rows[0].id};
                    res.send('credentials correct');
                }
                else
