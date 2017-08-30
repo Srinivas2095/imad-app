@@ -97,7 +97,7 @@ app.get('/check-login',function(req,res)
    }
    else
    {
-       res.send("you are logged in");
+       res.send("you are not logged in");
    }
 });
 
